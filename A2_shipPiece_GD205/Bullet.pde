@@ -11,12 +11,12 @@ class Bullet{
     // switch statement that creates the difference between both types of fire
     switch(type){
       case "alt":
-        speedB = new PVector(0.0, 0.7);
+        speedB = new PVector(0.0, -0.7);
         c = #B25107;
         size = 50;
         break;
       case "main":
-        speedB = new PVector(0.0, 0.45);
+        speedB = new PVector(0.0, -0.45);
         c = #3BF552;
         size = 30;
         break;
