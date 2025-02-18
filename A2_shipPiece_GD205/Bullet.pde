@@ -1,7 +1,7 @@
 class Bullet{
   
   PVector posB;
-  PVector speedB;
+  PVector speedB = new PVector();
   color c;
   int size;
   
