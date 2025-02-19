@@ -3,7 +3,7 @@ class Bullet{
   PVector posB;
   PVector speedB = new PVector();
   color c;
-  int size;
+  int sizeB;
   
   Bullet(float x, float y, String type){
     posB = new PVector(x, y);
@@ -13,12 +13,12 @@ class Bullet{
       case "alt":
         speedB = new PVector(0.0, -6.0);
         c = #B25107;
-        size = 50;
+        sizeB = 50;
         break;
       case "main":
         speedB = new PVector(0.0, -5.0);
         c = #3BF552;
-        size = 30;
+        sizeB = 30;
         break;
     }
   }
@@ -27,7 +27,7 @@ class Bullet{
   void display(){
     fill(c);
     noStroke();
-    circle(posB.x, posB.y, size);
+    circle(posB.x, posB.y, sizeB);
   }
   
   void update(){
