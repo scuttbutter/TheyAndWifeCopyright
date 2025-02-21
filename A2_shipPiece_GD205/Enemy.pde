@@ -1,16 +1,21 @@
-class Enemy {
+class Enemy extends enemyModel {
   PVector posE;
   PVector sizeE;
-  PVector HoriSpeedE = new PVector();
+  PVector VertSpeedE = new PVector();
   
   Enemy(float x, float y, float c, float d){
     posE = new PVector(x, y);
     sizeE = new PVector(c, d);
-    HoriSpeedE = new PVector(75.0, 0.0 );
+    VertSpeedE = new PVector(0.0, 75.0);
+    
   }
   
   void display(){
+    colour();
     rect(posE.x, posE.y, sizeE.x, sizeE.y);
+  }
+  void update(){
+    posE.add(VertSpeedE);
   }
   
 }

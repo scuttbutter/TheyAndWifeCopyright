@@ -1,0 +1,36 @@
+/*
+Wanna make a fake galaga wanted to type something else but quickly realized it was 
+not appropiate for a school enviorment :3 made it with They and Wife LLC
+*/
+Bullet b;
+ArrayList <Enemy> e;
+
+void setup(){
+  size(666, 666);
+  e = new ArrayList <Enemy>();
+  b = new Bullet (999, 999, "type");
+}
+
+void draw(){
+  background(0);
+  b.display();
+  b.update();
+  
+  for(Enemy enemy : e){
+  enemy.display();
+
+    //if(frameCount % 100 == 0){
+    //  enemy.update();
+    //}
+  }
+}
+
+void keyPressed(){
+  if(key == ' '){
+    b = new Bullet(333, 333, "main");
+  }
+  
+  if(key == 'q'){
+    b = new Bullet(333, 333, "alt");
+  }
+}

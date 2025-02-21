@@ -1,13 +1,17 @@
 float shapeX, shapeY; // Position of the movable shape
 float shapeSize = 50;  // Size of the shape
 
+ArrayList <Enemy> en;
 Bullet b;
+Enemy e;
 
 void setup(){
   size(666, 666);
   shapeX = width / 2; // Start in the center of the screen
   shapeY = height - 100; // Position the shape a little above the bottom
-  
+  e = new Enemy(111, 111, 30, 60);
+  en = new ArrayList <Enemy> ();
+  en.add(e);
   // Initialize a bullet (it won't move with the shape, just exists on screen)
   b = new Bullet(333, 333, "type");
 }
@@ -23,6 +27,14 @@ void draw(){
   // Display and update the bullet
   b.display();
   b.update();
+  
+  for(Enemy en : en){
+    en.display();
+    
+    if(frameCount % 120 == 0){
+      en.update();
+    }
+  }
 }
 
 void keyPressed(){
