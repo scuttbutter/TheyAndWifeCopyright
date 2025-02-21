@@ -30,7 +30,14 @@ class Bullet{
     circle(posB.x, posB.y, sizeB);
   }
   
+  
   void update(){
     posB.add(speedB);
+  }
+  
+  // Check for collision with a target (circle detection)
+  boolean checkCollision(float targetX, float targetY, float targetRadius){
+    float distance = dist(posB.x, posB.y, targetX, targetY);
+    return distance < (sizeB / 2 + targetRadius);
   }
 }
