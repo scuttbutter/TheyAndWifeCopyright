@@ -2,6 +2,7 @@
 //IT WAS SO UCKED UP WHY DID THEY MAKE ME WATCH THAT! I HATE PERSONA ,,,, they dont prepare you enough for this
 //its gonna take me 3 weeks to recover from what i saw on my screen,
 //Hi siul! i hope it works now bbg
+//Hi scott I did work :3 thank you bbt
 
 float shapeX, shapeY; // Position of the movable shape
 float shapeSize = 50;  // Size of the shape
