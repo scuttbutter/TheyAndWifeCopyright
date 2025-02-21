@@ -12,7 +12,7 @@ class Bullet{
     switch(type){
       case "alt":
         speedB = new PVector(0.0, -6.0);
-        c = #B25107;
+        c = #1f7a5d;
         sizeB = 50;
         break;
       case "main":
