@@ -31,7 +31,7 @@ void draw() {
   background(2,33,30);
 
   // Display the shape at the updated position
-  fill(173, 80, 216); // PURPLE NOW !
+  fill(#AD50D8); // PURPLE NOW !
   noStroke();
   rect(shapeX, shapeY, shapeSize, shapeSize); // Draw the shape (a rectangle in this case)
 
@@ -40,11 +40,15 @@ void draw() {
     en.display(); // spawns the enemies
     en.update(); // makes them move every 2 seconds     
   }
-
+  
+  // removes each enemy when the bullet hits the enemy
   for(int i = en.size() - 1; i >= 0; i--){
     Enemy e = en.get(i);
     if(e.pleaseDie == true){
       en.remove(e);
+    }
+    if(i == 0){
+      e.allDead = true;
     }
   }
   

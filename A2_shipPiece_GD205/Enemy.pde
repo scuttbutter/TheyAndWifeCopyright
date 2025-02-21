@@ -9,6 +9,7 @@ class Enemy extends enemyModel {
   float botE;
   
   boolean pleaseDie;
+  boolean allDead;
   
   Enemy(float x, float y, float c, float d){
     posE = new PVector(x, y);
@@ -21,6 +22,7 @@ class Enemy extends enemyModel {
     botE = y + d/2;
     
     pleaseDie = false;
+    allDead = false;
   }
   
   void display(){
