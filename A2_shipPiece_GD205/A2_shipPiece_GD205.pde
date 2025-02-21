@@ -1,6 +1,11 @@
 float shapeX, shapeY; // Position of the movable shape
 float shapeSize = 50;  // Size of the shape
 
+//fyi i just finished persona 3 gameplay and im like actually in fucking tears while editing this!-scott
+//IT WAS SO UCKED UP WHY DID THEY MAKE ME WATCH THAT! I HATE PERSONA ,,,, they dont prepare you enough for this -scott
+
+
+
 ArrayList <Enemy> en;
 Bullet b;
 Enemy e;
