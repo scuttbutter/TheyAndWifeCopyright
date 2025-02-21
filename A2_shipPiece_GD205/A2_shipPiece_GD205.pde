@@ -54,7 +54,7 @@ void keyPressed() {
   }
 
   // Shoot "alt" bullet if enough time has passed
-  if (key == 'q' && (millis() - lastAltShotTime) / 1000.0 > altCooldown) {
+  if (key == 'Q' && (millis() - lastAltShotTime) / 1000.0 > altCooldown) {
     bullets.add(new Bullet(shapeX + shapeSize / 2, shapeY, "alt"));
     lastAltShotTime = millis(); // Record the time of this shot
   }
