@@ -34,6 +34,3 @@ class Bullet{
     posB.add(speedB);
   }
 }
-        
-        
-        
