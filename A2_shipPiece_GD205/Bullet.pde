@@ -4,6 +4,10 @@ class Bullet{
   PVector speedB = new PVector();
   color c;
   int sizeB;
+  float leftB;
+  float rightB;
+  float topB;
+  float botB;
   
   Bullet(float x, float y, String type){
     posB = new PVector(x, y);
@@ -21,6 +25,12 @@ class Bullet{
         sizeB = 30;
         break;
     }
+    
+    // hitbox variables
+    rightB = posB.x + sizeB/2.0;
+    leftB = posB.x - sizeB/2.0;
+    topB = posB.y - sizeB/2.0;
+    botB = posB.y + sizeB/2.0;
   }
   
   // spawns the bulet 
@@ -33,11 +43,19 @@ class Bullet{
   
   void update(){
     posB.add(speedB);
+    rightB = posB.x + sizeB/2.0;
+    leftB = posB.x - sizeB/2.0;
+    topB = posB.y - sizeB/2.0;
+    botB = posB.y + sizeB/2.0;
   }
   
-  // Check for collision with a target (circle detection)
-  boolean checkCollision(float targetX, float targetY, float targetRadius){
-    float distance = dist(posB.x, posB.y, targetX, targetY);
-    return distance < (sizeB / 2 + targetRadius);
+  void hitEnemy(Enemy e){
+    // collision kills enemies
+    if(topB <= e.botE &&
+       botB >= e.topE &&
+       leftB <= e.rightE &&
+       rightB >= e.leftE){
+         e.pleaseDie = true;
+       }
   }
 }

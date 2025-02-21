@@ -20,7 +20,7 @@ void setup() {
   shapeY = height - 100; // Position the shape a little above the bottom
   bullets = new ArrayList<Bullet>(); // Initialize the bullets array
   en = new ArrayList<Enemy>(); // Initialize the enemies array
-  // creates a loop to spawn all the enemies
+  // creates a loop to spawn all the enemies and adds to the arraylist
   for(int i = 0; i <spawnPoints.length; i++){
     Enemy e = new Enemy(spawnPoints[i], 100, 30, 80);
     en.add(e);
@@ -35,9 +35,17 @@ void draw() {
   noStroke();
   rect(shapeX, shapeY, shapeSize, shapeSize); // Draw the shape (a rectangle in this case)
 
+  // cycle through the arraylist and spawns all the enemies
   for(Enemy en : en){
-    en.display();
-    en.update();
+    en.display(); // spawns the enemies
+    en.update(); // makes them move every 2 seconds     
+  }
+
+  for(int i = en.size() - 1; i >= 0; i--){
+    Enemy e = en.get(i);
+    if(e.pleaseDie == true){
+      en.remove(e);
+    }
   }
   
   // Display and update each bullet
@@ -45,6 +53,10 @@ void draw() {
     Bullet b = bullets.get(i);
     b.display();
     b.update();
+    
+    for(Enemy en : en){
+      b.hitEnemy(en);
+    }
 
     // Remove bullets that are off the screen
     if (b.posB.y < 0) {
@@ -67,7 +79,7 @@ void keyPressed() {
   }
 
   // Shoot "alt" bullet if enough time has passed
-  if (key == 'Q' && (millis() - lastAltShotTime) / 1000.0 > altCooldown) {
+  if (keyCode == 'Q' && (millis() - lastAltShotTime) / 1000.0 > altCooldown) {
     bullets.add(new Bullet(shapeX + shapeSize / 2, shapeY, "alt"));
     lastAltShotTime = millis(); // Record the time of this shot
   }
