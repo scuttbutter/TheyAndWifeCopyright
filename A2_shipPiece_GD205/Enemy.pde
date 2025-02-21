@@ -15,7 +15,8 @@ class Enemy extends enemyModel {
     rect(posE.x, posE.y, sizeE.x, sizeE.y);
   }
   void update(){
-    posE.add(VertSpeedE);
+    if(frameCount % 120 == 0){
+      posE.add(VertSpeedE);
+    }
   }
-  
 }

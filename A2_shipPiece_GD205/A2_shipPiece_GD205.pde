@@ -6,6 +6,8 @@
 float shapeX, shapeY; // Position of the movable shape
 float shapeSize = 50;  // Size of the shape
 ArrayList<Bullet> bullets; // Array to store the bullets
+ArrayList <Enemy> en; // Array to store the enemies
+float [] spawnPoints = { 50, 150, 250, 350, 450, 550 }; // spawn points for all the enemies
 
 float lastMainShotTime = 0; // Time of the last "main" bullet shot
 float lastAltShotTime = 0;  // Time of the last "alt" bullet shot
@@ -17,6 +19,12 @@ void setup() {
   shapeX = width / 2 - shapeSize / 2; // Start in the center of the screen
   shapeY = height - 100; // Position the shape a little above the bottom
   bullets = new ArrayList<Bullet>(); // Initialize the bullets array
+  en = new ArrayList<Enemy>(); // Initialize the enemies array
+  // creates a loop to spawn all the enemies
+  for(int i = 0; i <spawnPoints.length; i++){
+    Enemy e = new Enemy(spawnPoints[i], 100, 30, 80);
+    en.add(e);
+  }
 }
 
 void draw() {
@@ -27,6 +35,11 @@ void draw() {
   noStroke();
   rect(shapeX, shapeY, shapeSize, shapeSize); // Draw the shape (a rectangle in this case)
 
+  for(Enemy en : en){
+    en.display();
+    en.update();
+  }
+  
   // Display and update each bullet
   for (int i = bullets.size() - 1; i >= 0; i--) {
     Bullet b = bullets.get(i);
@@ -41,9 +54,9 @@ void draw() {
 }
 
 void keyPressed() {
-  if (keyCode == LEFT) {
+  if (keyCode == 'A') {
     shapeX -= 5; 
-  } else if (keyCode == RIGHT) {
+  } else if (keyCode == 'D') {
     shapeX += 5; 
   }
 
