@@ -1,6 +1,7 @@
 class Ship{
   PVector posS;
-  PVector sizeS
+  PVector sizeS;
+  
   
   
 }

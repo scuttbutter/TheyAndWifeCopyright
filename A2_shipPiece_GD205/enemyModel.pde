@@ -1,2 +1,3 @@
 class enemyModel{
+  color c;
 }
