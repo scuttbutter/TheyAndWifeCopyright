@@ -3,7 +3,7 @@
 //its gonna take me 3 weeks to recover from what i saw on my screen,
 //Hi siul! i hope it works now bbg
 //Hi scott I did work :3 thank you bbt
-
+// Controls for main bullet is space, Alt bullet is Q and movement is A for left D for right
 float shapeX, shapeY; // Position of the movable shape
 float shapeSize = 50;  // Size of the shape
 ArrayList<Bullet> bullets; // Array to store the bullets
@@ -14,6 +14,7 @@ float lastMainShotTime = 0; // Time of the last "main" bullet shot
 float lastAltShotTime = 0;  // Time of the last "alt" bullet shot
 float mainCooldown = 0.25;   // Main fire cooldown in seconds (1.5 seconds)
 float altCooldown = 1.0;    // Alt fire cooldown in seconds (3 seconds)
+
 
 void setup() {
   size(666, 666);
@@ -26,6 +27,7 @@ void setup() {
     Enemy e = new Enemy(spawnPoints[i], 100, 30, 80);
     en.add(e);
   }
+  
 }
 
 void draw() {
@@ -35,7 +37,7 @@ void draw() {
   fill(#AD50D8); // PURPLE NOW !
   noStroke();
   rect(shapeX, shapeY, shapeSize, shapeSize); // Draw the shape (a rectangle in this case)
-
+  
   // cycle through the arraylist and spawns all the enemies
   for(Enemy en : en){
     en.display(); // spawns the enemies
@@ -72,7 +74,7 @@ void draw() {
 
 void keyPressed() {
   if (keyCode == 'A') {
-    shapeX -= 5; 
+    shapeX -= 5;
   } else if (keyCode == 'D') {
     shapeX += 5; 
   }
@@ -88,4 +90,8 @@ void keyPressed() {
     bullets.add(new Bullet(shapeX + shapeSize / 2, shapeY, "alt"));
     lastAltShotTime = millis(); // Record the time of this shot
   }
+}
+
+void keyReleased(){
+  
 }

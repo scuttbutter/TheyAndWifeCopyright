@@ -1,9 +1,5 @@
 class enemyModel{
-  color c;
-  
-  enemyModel(){
-    c = #48B7ED;
-  }
+  color c = #48B7ED;
   
   void colour(){
     fill(c);

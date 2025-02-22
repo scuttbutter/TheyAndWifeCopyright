@@ -3,6 +3,8 @@ class Enemy extends enemyModel {
   PVector posE;
   PVector sizeE;
   PVector VertSpeedE = new PVector();
+  
+  //hit box for the 
   float rightE;
   float leftE;
   float topE;
