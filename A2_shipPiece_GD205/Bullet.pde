@@ -4,6 +4,8 @@ class Bullet{
   PVector speedB = new PVector();
   color c;
   int sizeB;
+  
+  // Hitbox for the bulleths
   float leftB;
   float rightB;
   float topB;

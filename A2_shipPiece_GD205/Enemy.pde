@@ -3,13 +3,13 @@ class Enemy extends enemyModel {
   PVector posE;
   PVector sizeE;
   PVector VertSpeedE = new PVector();
+  
+  // Hitboxes for the enemies
   float rightE;
   float leftE;
   float topE;
   float botE;
   
-  boolean pleaseDie;
-  boolean allDead;
   
   Enemy(float x, float y, float c, float d){
     posE = new PVector(x, y);
@@ -21,8 +21,8 @@ class Enemy extends enemyModel {
     topE = y - d/2;
     botE = y + d/2;
     
-    pleaseDie = false;
-    allDead = false;
+    pleaseDie = false; // collisions
+    allDead = false; // 
   }
   
   void display(){
