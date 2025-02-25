@@ -57,6 +57,13 @@ void draw() {
   for (Enemy en : en) {
     en.display(); // spawns the enemies
     en.update(); // makes them move every 2 seconds
+    
+    for(int i = 0; en.pleaseDie == true; i++){
+      if(i % 6 ==0){
+        en.display();
+        en.update();
+      }
+    }
   }
 
   // removes each enemy when the bullet hits the enemy

@@ -59,5 +59,6 @@ class Bullet{
        rightB >= e.leftE){
          e.pleaseDie = true;
        }
+       
   }
 }
