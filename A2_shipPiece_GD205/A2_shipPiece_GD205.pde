@@ -58,12 +58,6 @@ void draw() {
     en.display(); // spawns the enemies
     en.update(); // makes them move every 2 seconds
     
-    for(int i = 0; en.pleaseDie == true; i++){
-      if(i % 6 ==0){
-        en.display();
-        en.update();
-      }
-    }
   }
 
   // removes each enemy when the bullet hits the enemy
@@ -72,8 +66,14 @@ void draw() {
     if (e.pleaseDie == true) {
       en.remove(e);
     }
-    if (i == 0) {
-      e.allDead = true;
+    
+    // trying to set up 0.
+    //if () {
+    //  e.allDead = true;
+    //}
+    
+    if(frameCount % 120 == 0){
+      println(i);
     }
   }
 
