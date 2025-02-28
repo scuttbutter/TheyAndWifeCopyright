@@ -1,4 +1,4 @@
-class Bullet{
+  class Bullet{
   
   PVector posB;
   PVector speedB = new PVector();

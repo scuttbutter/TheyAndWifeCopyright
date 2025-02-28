@@ -59,21 +59,15 @@ void draw() {
     en.update(); // makes them move every 2 seconds
     
   }
+  int enemiesDeath = 0; // tracks how many enemies are removed
 
   // removes each enemy when the bullet hits the enemy
   for (int i = en.size() - 1; i >= 0; i--) {
     Enemy e = en.get(i);
     if (e.pleaseDie == true) {
       en.remove(e);
-    }
-    
-    // trying to set up 0.
-    //if () {
-    //  e.allDead = true;
-    //}
-    
-    if(frameCount % 120 == 0){
-      println(i);
+      enemiesDeath++;// supposed to add one every time an enemy dies but doesnt
+      println(enemiesDeath);
     }
   }
 
