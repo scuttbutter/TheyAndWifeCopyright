@@ -1,11 +1,20 @@
 class Bullet {
 
+
+  class Bullet{
+  
+
   PVector posB;
   PVector speedB = new PVector();
   color c;
   int sizeB;
 
+
   // hit box for the bullets
+
+  
+  // Hitbox for the bulleths
+
   float leftB;
   float rightB;
   float topB;
@@ -53,11 +62,12 @@ class Bullet {
 
   void hitEnemy(Enemy e) {
     // collision kills enemies
-    if (topB <= e.botE &&
-      botB >= e.topE &&
-      leftB <= e.rightE &&
-      rightB >= e.leftE) {
-      e.pleaseDie = true;
-    }
+    if(topB <= e.botE &&
+       botB >= e.topE &&
+       leftB <= e.rightE &&
+       rightB >= e.leftE){
+         e.pleaseDie = true;
+       }
+       
   }
 }
